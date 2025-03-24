@@ -11,4 +11,5 @@ add_compile_options(-g -std=c99 -O0 -pedantic -pedantic-errors -Wall -Wbad-funct
         -Wwrite-strings -fanalyzer -D_DEFAULT_SOURCE)
 
 
-add_executable(jeu_de_cochon main.c)
+add_executable(jeu_de_cochon main.c
+)

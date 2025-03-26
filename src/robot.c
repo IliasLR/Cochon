@@ -2,10 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 
+// FICHIER POUR LE FONCTIONNEMENT DES ROBOTS
+// RENDRE LE FONCTIONNEMENT PLUS COMPLEXE, LA ON SE BASE SUR DES SEUILS, IL FAUDRAIT LE FAIRE CALCULER PAR RAPPORT A TOUT LES POINTS DES AUTRES JOUEURS
+
 char decision_robot(JeuDeCochon *jeu, int joueurIndex, int pointsTour) {
     Joueur *joueur = &jeu->joueurs[joueurIndex];
     
-    int seuil = 20;
+    int seuil = 20; // Le bot essaye d'avoir 20 points avants de "réfléchire"
     
     int meilleurScoreAdversaire = 0;
     int secondMeilleurScore = 0;
@@ -45,7 +48,7 @@ char decision_robot(JeuDeCochon *jeu, int joueurIndex, int pointsTour) {
         printf("%s%s (Robot) joue prudemment pour conserver son avance.%s\n", yellow, joueur->pseudo, reset);
     } else if (ecartAvecMeilleur >= -5 && ecartAvecMeilleur <= 10) {
         seuil = 22;
-        printf("%s%s (Robot) cherche à prendre l'avantage sur son adversaire proche.%s\n", cyan, joueur->pseudo, reset);
+        printf("%s%s (Robot) cherche à prendre l'avantage sur ses adversaires.%s\n", cyan, joueur->pseudo, reset);
         
         if (joueur->points + pointsTour > meilleurScoreAdversaire + 5) {
             return 'S';

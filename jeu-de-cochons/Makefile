@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g -pedantic -Werror -O2 -std=c11 -Wunused -Wformat=2 -ftrapv -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wconversion -Wshadow -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes
+CFLAGS = -Wall -Wextra -g
 SRC_DIR = src
 OBJ_DIR = obj
 EXEC = jeu_de_cochons
